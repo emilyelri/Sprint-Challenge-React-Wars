@@ -32,13 +32,13 @@ export default function StarWarsCard(props) {
         })
         .catch(err =>{
             console.log("Species request failed.", err);
-        }), [])
+        }), [props])
 
     return (
         <Card>
             <h2>{props.name}</h2>
             <p>Species: {specs}</p>
-            <p>Homeworld: {homeworld}</p>
+            <p>Homeworld: {planet}</p>
             <p>Gender: {props.gender}</p>
             <p>Born {props.birth_year}</p>
             <h3>Appearance</h3>
