@@ -1,19 +1,37 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import StarWars from "./components/StarWars";
+import styled from "styled-components";
 
-const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+export default function App () {
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+  const AppContainer = styled.div`
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    `;
+
+  const Header = styled.span`
+    color: white;
+    margin: 0px 30px;
+    padding: 30px;
+    font-size: 2rem;
+    text-shadow: 1px 1px 5px #fff;
+  `;
+
+  const Titlebar = styled.div`
+    width: 100%;
+    padding: 5px;
+    margin-top: 0px;
+    background-color: gray;
+    position: fixed;
+  `;
 
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
+    <AppContainer>
+      <Titlebar>
+        <Header>React Wars</Header>
+      </Titlebar>
+      <StarWars />
+    </AppContainer>
   );
 }
-
-export default App;
